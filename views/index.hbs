@@ -1,0 +1,24 @@
+<script>
+    $( document ).ready(function() {
+        $( "#loginForm" ).submit(function( event ) {
+            $.post( "/login", $("#loginForm").serialize() )
+                    .done(function( data ) {
+                        $("#message").html("You got logged in yo!");
+                    })
+                    .error(function( data ) {
+                        $("#message").html("Username/Password Incorrect.");
+                    });
+            event.preventDefault();
+        });
+    });
+</script>
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<div>
+    <form id="loginForm" action="/login" method="post">
+      Username: <input type="text" name="username">
+      Password: <input type="password" name="password">
+      <input type="submit" name="Login">
+    </form>
+    <p id="message"></p>
+</div>
