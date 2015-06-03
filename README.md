@@ -1,4 +1,10 @@
-# Node frontend / Ruby backend login example
+# Service Tier Example
+Remember to run 
+```
+npm install
+```
+before doing anything else.
+
 To run this example open two terminals
 
 In #1 type
